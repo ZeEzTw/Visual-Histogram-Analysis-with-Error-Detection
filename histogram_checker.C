@@ -12,7 +12,7 @@
     jsonFile << "[\n";
 
     std::map<std::pair<int, int>, double> errorMap;
-    std::ifstream infile("CL32_matrix.dat");
+    std::ifstream infile("data/CL32_matrix.dat");
     int i, j;
     double errorValue;
 
@@ -29,8 +29,8 @@
     {
         for (int j = i + 1; j < ndet; j++)
         {
-            TFile *fEE = new TFile(Form("hEE_%i_%i.root", i, j));
-            if(!fEE || fEE->IsZombie())
+            TFile *fEE = new TFile(Form("data/hEE_%i_%i.root", i, j));
+            if (!fEE || fEE->IsZombie())
             {
                 delete fEE;
                 continue;
